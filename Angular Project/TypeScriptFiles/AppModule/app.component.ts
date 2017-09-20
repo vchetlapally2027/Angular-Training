@@ -1,7 +1,7 @@
 import { Component } from "@angular/core"
-import { Employee } from "./Models/Employee"
-import { EmployeeLogic, RealEmployeeLogic, abcd } from "./Logics/EmployeeLogic"
-import { EmployeeService } from "./Logics/EmployeeService"
+import { Employee } from "../Models/Employee"
+import { EmployeeLogic, RealEmployeeLogic, abcd } from "../Logics/EmployeeLogic"
+import { EmployeeService } from "../Logics/EmployeeService"
 
 @Component({
     selector: "my-custom-tag",

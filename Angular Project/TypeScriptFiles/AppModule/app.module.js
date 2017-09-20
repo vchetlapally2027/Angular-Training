@@ -9,13 +9,22 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var app_component_1 = require("./app.component");
 var platform_browser_1 = require("@angular/platform-browser");
+//Required when we use components instead of Module
+// import {EmployeeComponent} from "../EmployeeModule/emp.component"
+// import {EmployeeAddComponent} from "../EmployeeModule/emp.add.component"
+// import {EmployeeListComponent} from "../EmployeeModule/emp.list.component"
+var emp_Module_1 = require("../EmployeeModule/emp.Module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule],
+            //Required when we use components instead of Module
+            // imports:[BrowserModule],
+            imports: [platform_browser_1.BrowserModule, emp_Module_1.EmployeeModule],
             declarations: [app_component_1.AppComponent],
+            //Required when we use components instead of Module
+            // declarations:[AppComponent,EmployeeComponent,EmployeeAddComponent,EmployeeListComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);

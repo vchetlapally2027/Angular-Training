@@ -10,8 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var Employee_1 = require("./Models/Employee");
-var EmployeeService_1 = require("./Logics/EmployeeService");
+var Employee_1 = require("../Models/Employee");
+var EmployeeService_1 = require("../Logics/EmployeeService");
 var AppComponent = /** @class */ (function () {
     // constructor() {
     //     this.Name="Venkatesh";

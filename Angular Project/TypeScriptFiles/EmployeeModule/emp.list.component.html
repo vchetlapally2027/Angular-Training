@@ -1,0 +1,19 @@
+This is Employee List
+
+
+<h1>Employee Info</h1>
+<div>
+    <!--<input type="button" value="Add New" (click)="ShowAddNew()">-->
+    <table>
+        <tr>
+            <th>EmpName</th>
+            <th>Salary</th>
+        </tr>
+
+        <tr *ngFor="let x of Employees">
+            <td>{{x.EmpName}}</td>
+            <td>{{x.Salary}}</td>
+        </tr>
+
+    </table>
+</div>
