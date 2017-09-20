@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var EmployeeLogic_1 = require("./Logics/EmployeeLogic");
+var Employee_1 = require("./Models/Employee");
+var EmployeeService_1 = require("./Logics/EmployeeService");
 var AppComponent = /** @class */ (function () {
     // constructor() {
     //     this.Name="Venkatesh";
@@ -23,12 +24,25 @@ var AppComponent = /** @class */ (function () {
     /**
      *Injecting Service
      */
+    // constructor(private eLogic:EmployeeLogic) {
+    //     this.Employees = eLogic.GetEmployees();
+    // }
     function AppComponent(eLogic) {
         this.eLogic = eLogic;
         this.Employees = eLogic.GetEmployees();
+        this.IsAddNew = false;
     }
     AppComponent.prototype.Increment = function () {
         this.Salary = this.Salary + 50;
+    };
+    AppComponent.prototype.SaveEmployee = function () {
+        this.eLogic.SaveEmployee(new Employee_1.Employee("xxx", 500));
+    };
+    AppComponent.prototype.ShowAddNew = function () {
+        this.IsAddNew = true;
+    };
+    AppComponent.prototype.HideAddNew = function () {
+        this.IsAddNew = false;
     };
     AppComponent = __decorate([
         core_1.Component({
@@ -38,11 +52,13 @@ var AppComponent = /** @class */ (function () {
             //Service for Dummy Logic
             // providers:[{provide:EmployeeLogic,useClass:EmployeeLogic}]
             //Service for Real Logic
-            providers: [{ provide: EmployeeLogic_1.EmployeeLogic, useClass: EmployeeLogic_1.RealEmployeeLogic }]
+            //providers:[{provide:EmployeeLogic,useClass:RealEmployeeLogic}]
             //Service for class with other type, it will throw error at run time though
             //providers:[{provide:EmployeeLogic,useClass:abcd}]
+            //Service for Employee Service
+            providers: [EmployeeService_1.EmployeeService]
         }),
-        __metadata("design:paramtypes", [EmployeeLogic_1.EmployeeLogic])
+        __metadata("design:paramtypes", [EmployeeService_1.EmployeeService])
     ], AppComponent);
     return AppComponent;
 }());

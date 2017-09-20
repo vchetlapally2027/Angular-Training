@@ -1,18 +1,30 @@
-<h1>Hello</h1><h2>{{Name}}.</h2>Your Salary is {{Salary}}
+<h1>Hello</h1>
+<h2>{{Name}}.</h2>Your Salary is {{Salary}}
 
-<input type="button" value="Increment" (click)="Increment()"/>
+<input type="button" value="Increment" (click)="Increment()" />
 
 
 <h1>Employee Info</h1>
-<table>
-<tr>
-    <th>EmpName</th>
-    <th>Salary</th>
-</tr>
+<div [hidden]="IsAddNew">
+    <input type="button" value="Add New" (click)="ShowAddNew()">
+    <table>
+        <tr>
+            <th>EmpName</th>
+            <th>Salary</th>
+        </tr>
 
-<tr *ngFor="let x of Employees">
-    <td>{{x.EmpName}}</td>
-    <td>{{x.Salary}}</td>
-</tr>
+        <tr *ngFor="let x of Employees">
+            <td>{{x.EmpName}}</td>
+            <td>{{x.Salary}}</td>
+        </tr>
 
-</table>
+    </table>
+</div>
+<br/>
+<br/>
+<div [hidden]="!IsAddNew">
+    EmpName :<input type="text" /><br> 
+    Salary :<input type="text" />
+    <input type="button" value="Save" (click)="SaveEmployee()" />
+    <input type="button" value="Cancel" (click)="HideAddNew()">
+</div>
