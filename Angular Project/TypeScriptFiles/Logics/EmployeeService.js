@@ -4,9 +4,9 @@ var Employee_1 = require("../Models/Employee");
 var EmployeeService = /** @class */ (function () {
     function EmployeeService() {
         this.Employees = new Array();
-        this.Employees.push(new Employee_1.Employee("Venkatesh-Dummy Logic", 1000));
-        this.Employees.push(new Employee_1.Employee("Nihan-Dummy Logic", 10000));
-        this.Employees.push(new Employee_1.Employee("Thanush-Dummy Logic", 1000));
+        this.Employees.push(new Employee_1.Employee("Venkatesh", 1000));
+        this.Employees.push(new Employee_1.Employee("Nihan", 10000));
+        this.Employees.push(new Employee_1.Employee("Thanush", 1000));
     }
     EmployeeService.prototype.GetEmployees = function () {
         return this.Employees;

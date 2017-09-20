@@ -1,4 +1,4 @@
-import { Component } from "@angular/core"
+import { Component,Output,EventEmitter } from "@angular/core"
 import {Employee} from "../Models/Employee"
 import {EmployeeService} from "../Logics/EmployeeService"
 
@@ -8,10 +8,18 @@ import {EmployeeService} from "../Logics/EmployeeService"
     // providers: [EmployeeService]
 })
 export class EmployeeAddComponent {
+    @Output() OnSave:EventEmitter<void>=new EventEmitter<void>();
+    @Output() OnCancel:EventEmitter<void>=new EventEmitter<void>();
     constructor(private eLogic: EmployeeService) {
     }
 
-    SaveEmployee(): void {
-        this.eLogic.SaveEmployee(new Employee("xxx", 500))
+
+   SaveEmployee():void{
+        this.eLogic.SaveEmployee
+        (new Employee("XXX",500));
+        this.OnSave.emit();
+    }
+    HideAddNew():void{
+        this.OnCancel.emit();
     }
 }
