@@ -63,4 +63,28 @@ var AppComponent = /** @class */ (function () {
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
+var CustomerComponent = /** @class */ (function () {
+    function CustomerComponent() {
+    }
+    CustomerComponent = __decorate([
+        core_1.Component({
+            selector: 'customer',
+            template: '<h1>Customer</h1>'
+        })
+    ], CustomerComponent);
+    return CustomerComponent;
+}());
+exports.CustomerComponent = CustomerComponent;
+var ProductComponent = /** @class */ (function () {
+    function ProductComponent() {
+    }
+    ProductComponent = __decorate([
+        core_1.Component({
+            selector: 'product',
+            template: '<h1>Product</h1>'
+        })
+    ], ProductComponent);
+    return ProductComponent;
+}());
+exports.ProductComponent = ProductComponent;
 //# sourceMappingURL=app.component.js.map

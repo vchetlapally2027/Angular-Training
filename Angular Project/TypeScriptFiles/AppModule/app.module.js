@@ -14,17 +14,33 @@ var platform_browser_1 = require("@angular/platform-browser");
 // import {EmployeeAddComponent} from "../EmployeeModule/emp.add.component"
 // import {EmployeeListComponent} from "../EmployeeModule/emp.list.component"
 var emp_Module_1 = require("../EmployeeModule/emp.Module");
+var router_1 = require("@angular/router");
+var emp_component_1 = require("../EmployeeModule/emp.component");
+var c = [
+    { path: 'Customer', component: app_component_1.CustomerComponent },
+    { path: 'Product', component: app_component_1.ProductComponent },
+    { path: 'Employee', component: emp_component_1.EmployeeComponent }
+];
+// @NgModule({
+//     //Required when we use components instead of Module
+//     // imports:[BrowserModule],
+//     imports:[BrowserModule,EmployeeModule],
+//     RouterModule.forRoot(c,{useHash:true})],
+//     declarations:[AppComponent,CustomerComponent,ProductComponent],
+//     //Required when we use components instead of Module
+//     // declarations:[AppComponent,EmployeeComponent,EmployeeAddComponent,EmployeeListComponent],
+//     bootstrap:[AppComponent]
+// })
+// export class AppModule{
+// }
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            //Required when we use components instead of Module
-            // imports:[BrowserModule],
-            imports: [platform_browser_1.BrowserModule, emp_Module_1.EmployeeModule],
-            declarations: [app_component_1.AppComponent],
-            //Required when we use components instead of Module
-            // declarations:[AppComponent,EmployeeComponent,EmployeeAddComponent,EmployeeListComponent],
+            imports: [platform_browser_1.BrowserModule, emp_Module_1.EmployeeModule,
+                router_1.RouterModule.forRoot(c, { useHash: true })],
+            declarations: [app_component_1.AppComponent, app_component_1.CustomerComponent, app_component_1.ProductComponent],
             bootstrap: [app_component_1.AppComponent]
         })
     ], AppModule);
