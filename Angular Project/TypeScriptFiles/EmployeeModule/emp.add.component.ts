@@ -13,10 +13,11 @@ export class EmployeeAddComponent {
     constructor(private eLogic: EmployeeService) {
     }
 
-
+emp:Employee=new Employee("",0);
    SaveEmployee():void{
         this.eLogic.SaveEmployee
-        (new Employee("XXX",500));
+        (this.emp);
+        // (new Employee("XXX",500));
         this.OnSave.emit();
     }
     HideAddNew():void{

@@ -1,8 +1,19 @@
 <h1>Add Employee</h1> <br>
 
-<div>
+<!--<div>
     EmpName :<input type="text" /><br> 
     Salary :<input type="text" /><br> 
     <input type="button" value="Save" (click)="SaveEmployee()" />
     <input type="button" value="Cancel" (click)="HideAddNew()">
+</div>-->
+
+
+<div >
+    EmpName: 
+    <input type="text" [(ngModel)]="emp.EmpName"><br>
+     Salary:
+    <input type="text"  [(ngModel)]="emp.Salary"><br>
+    <input type="button" value="Save" (click)="SaveEmployee()">
+    <input type="button" value="Cancel" (click)="HideAddNew()">
+    
 </div>
