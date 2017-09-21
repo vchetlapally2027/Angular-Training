@@ -10,12 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var Employee_1 = require("../Models/Employee");
 var EmployeeService_1 = require("../Logics/EmployeeService");
 var EmployeeListComponent = /** @class */ (function () {
     function EmployeeListComponent(eLogic) {
+        var _this = this;
         this.eLogic = eLogic;
         this.OnAddNew = new core_1.EventEmitter();
-        this.Employees = eLogic.GetEmployees();
+        // this.Employees = eLogic.GetEmployees();
+        eLogic.GetEmployees().subscribe(function (r) {
+            var tempEmployees = r.json();
+            _this.Employees = tempEmployees.map(function (e) {
+                return new Employee_1.Employee(e.FirsName + " " + e.LastName, e.Salary);
+            });
+        });
     }
     EmployeeListComponent.prototype.ShowAddNew = function () {
         this.OnAddNew.emit();

@@ -7,9 +7,10 @@ import {CommonModule} from "@angular/common"
 import {EmployeeService} from "../Logics/EmployeeService"
 import {ConcatPipe} from "../Pipes/concat.pipe"
 import {FormsModule  } from "@angular/forms";
+import {HttpModule  } from "@angular/http";
 
 @NgModule({
-    imports:[CommonModule,FormsModule],
+    imports:[CommonModule,FormsModule,HttpModule],
     declarations:[ConcatPipe,EmployeeComponent,EmployeeAddComponent,EmployeeListComponent],
     exports:[EmployeeComponent],
     providers: [EmployeeService]
