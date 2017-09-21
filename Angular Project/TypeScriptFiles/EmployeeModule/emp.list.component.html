@@ -8,8 +8,8 @@
         </tr>
 
         <tr *ngFor="let x of Employees">
-            <td>{{x.EmpName}}</td>
-            <td>{{x.Salary}}</td>
+            <td>{{x.EmpName |uppercase|concat }}</td>
+            <td>{{x.Salary | currency}}</td>
         </tr>
 
     </table>

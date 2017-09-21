@@ -30,7 +30,7 @@ exports.RealEmployeeLogic = RealEmployeeLogic;
 var abcd = /** @class */ (function () {
     function abcd() {
         this.Employees = new Array();
-        this.Employees.push(new Employee_1.Employee(1));
+        this.Employees.push(1);
         this.Employees.push(2);
         this.Employees.push(3);
     }

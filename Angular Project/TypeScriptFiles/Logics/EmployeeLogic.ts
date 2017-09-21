@@ -31,7 +31,7 @@ export class abcd{
    private Employees : Array<number>
     constructor() {
         this.Employees = new Array<number>();
-        this.Employees.push(new Employee(1);
+        this.Employees.push(1);
         this.Employees.push(2);
         this.Employees.push(3);
     }

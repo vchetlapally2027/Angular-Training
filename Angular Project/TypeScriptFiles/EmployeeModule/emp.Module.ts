@@ -5,11 +5,12 @@ import {EmployeeAddComponent} from "../EmployeeModule/emp.add.component"
 import {EmployeeListComponent} from "../EmployeeModule/emp.list.component"
 import {CommonModule} from "@angular/common"
 import {EmployeeService} from "../Logics/EmployeeService"
+import {ConcatPipe} from "../Pipes/concat.pipe"
 
 
 @NgModule({
     imports:[CommonModule],
-    declarations:[EmployeeComponent,EmployeeAddComponent,EmployeeListComponent],
+    declarations:[ConcatPipe,EmployeeComponent,EmployeeAddComponent,EmployeeListComponent],
     exports:[EmployeeComponent],
     providers: [EmployeeService]
 })
